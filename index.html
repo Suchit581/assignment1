@@ -26,10 +26,10 @@
                     </a>
                 </div> -->
                 <ul class="nav-list">
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link current">Home</a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="#login" class="nav-link">login</a>
                     </li>
                 </ul>
@@ -40,17 +40,20 @@
     <main>
         <section id="login">
             <div class="content">
-                <form action="home.html" class="form">
+                <form action="home.html" class="form" method="POST">
+                    <div id="heading">
+                        <h2>Please Enter correct value to the form</h2>
+                    </div>
                     <div class="form-control">
                         <label for="email">Email</label>
-                        <input type="email" name="" id="email" placeholder="Enter your email here" required>
+                        <input type="email" name="" id="email" placeholder="Enter your email here"  required onkeydown="validate()" onmouseout="validate()">
                     </div>
                     <div class="form-control">
                         <label for="password">Password</label>
-                        <input type="password" name="" id="password" placeholder="Enter your passowrd here" required>
+                        <input type="password" name="" id="password" placeholder="Enter your password here" minlength="5" required onkeydown="validate()" onmouseout="validate()"> 
                     </div>
                     <div class="form-control">
-                        <button type="submit" class="btn">Log In</button>
+                        <button type="submit" id="submitBtn" disabled class="btn" >Log In</button>
                     </div>
                 </form>
             </div>
@@ -60,6 +63,23 @@
     <footer>
         <p>&copy; 2020 Suchit Sheth. All right resserved. </p>
     </footer>
+
+    <script>
+
+        
+        function validate(){
+            let email = document.getElementById('email');
+            let passowrd = document.getElementById('password');
+            let button = document.getElementById('submitBtn');
+            if(email.value.match('suchitsheth42@gmail.com') && passowrd.value.match('123456789')){
+                button.disabled = false
+            }
+            else{
+                button.disabled = true
+            }
+        }
+
+    </script>
 </body>
 
 </html>

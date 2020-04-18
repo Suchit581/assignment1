@@ -16,7 +16,6 @@ html{
 body{
     margin: 0;
     padding: 0;
-    background: #f3f3f3;
     overflow-x: hidden;
 }
 a{
@@ -155,7 +154,16 @@ main{
                 inset -4px -4px 10px -1px rgba(255,255,255,1),
                 15px 15px 20px -10px rgba(0,0,0,0.15),
                 -15px -15px 20px -10px rgba(255,255,255,.99);
+    transition: all 350ms ease-in-out;
 }
+
+.form #heading{
+    
+    display: none;
+    font-weight: 500;
+    color: #ff0000;
+}
+
 .form-control{
     margin: 2.5rem 0;
     display: flex;
@@ -169,26 +177,74 @@ main{
 
 .form-control input{
     background: transparent;
-    border-radius:50px;
+    border-radius:10px;
     height: 3.5rem;
     padding-left: 1rem;
-    border: 1px solid rgba(0,0,0,.7) ;
+    outline: none;
+    border: none;
+    /* border: 1px solid rgba(0,0,0,.7) ; */
     color: rgba(0,0,0,.7);
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,0,0,.2),
+                inset -2px -2px 5px rgba(0,0,0,.2),
+                inset 2px 2px 5px rgba(255,255,255,.8);
+    transition: box-shadow 350ms ease-in-out;
+}
+.form-control input:hover, input:focus {
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,0,0,.2),
+                inset -2px -2px 5px rgba(255,255,255,.8),
+                inset 2px 2px 5px rgba(0,0,0,.2);
+}
+
+.form-control input:invalid{
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(255,0,0,.2),
+                inset -2px -2px 5px rgba(255,255,255,.8),
+                inset 2px 2px 5px rgba(255,0,0,.2);
+}
+.form-control input:valid{
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,255,0,.2),
+                inset -2px -2px 5px rgba(255,255,255,.8),
+                inset 2px 2px 5px rgba(0,255,0,.2);
 }
 
 .btn{
-    border-radius: 2rem;
-    color: #fafafa;
+    color: #292929;
     display: inline-block;
-    padding: 1rem;
+    padding: 1.5rem 0; 
     text-transform: uppercase;
     transition: background-color 650ms;
     text-align: center;
     font-size: 2rem;
-    background-color: #7564eb;
+    border-radius: 1rem;
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,0,0,.2),
+                inset -2px -2px 5px rgba(0,0,0,.2),
+                inset 2px 2px 5px rgba(255,255,255,.8);
+    transition: box-shadow 350ms ease-in-out;
 }
-.btn:hover{
-    background-color: #5c4dc4;
+.btn:disabled{
+    color: rgba(0,0,0,.2);
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,0,0,.1),
+                inset -2px -2px 5px rgba(0,0,0,.1),
+                inset 2px 2px 5px rgba(255,255,255,.8);
+}
+.btn:enabled{
+    color: rgba(0,0,0,.8);
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,0,0,.2),
+                inset -2px -2px 5px rgba(0,0,0,.2),
+                inset 2px 2px 5px rgba(255,255,255,.8);
+}
+.btn:hover, .btn:focus {
+    
+    box-shadow: -5px -5px 15px rgba(255,255,255,.8),
+                5px 5px 15px rgba(0,0,0,.2),
+                inset -2px -2px 5px rgba(255,255,255,.8),
+                inset 2px 2px 5px rgba(0,0,0,.2);
 }
 
 
